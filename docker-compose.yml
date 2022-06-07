@@ -3,6 +3,8 @@ services:
   python:
     build: .
     container_name: python
+    ports:
+      - 8501:8501
     volumes:
       - ./app:/opt/app
     entrypoint: /opt/app/start.sh

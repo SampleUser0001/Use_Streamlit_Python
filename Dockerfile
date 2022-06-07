@@ -3,7 +3,7 @@ FROM python:latest
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
-RUN python -m pip install --upgrade pip
+RUN python -m pip install --upgrade pip streamlit
 RUN pip install python-dotenv
 
 WORKDIR /opt/app

@@ -9,6 +9,8 @@ from logutil import LogUtil
 
 from util.sample import Util
 
+import streamlit as st
+
 PYTHON_APP_HOME = os.getenv('PYTHON_APP_HOME')
 LOG_CONFIG_FILE = ['config', 'log_config.json']
 
@@ -30,7 +32,5 @@ if __name__ == '__main__':
     # args[0]はpythonのファイル名。
     # 実際の引数はargs[1]から。
     
-    print('Hello Python on Docker!!')
-    logger.info('This is logger message!!')
-
-    Util.print()
+    with open(os.path.join(PYTHON_APP_HOME, *['pages', 'README.md']), mode='r') as f:
+        st.write(f.read())
